@@ -1,6 +1,7 @@
 
 # Assignment 8: Treasure Hunt Adventure
 # The player explores an island and collects treasure.
+import random
 
 def play_game():
     treasures = []
@@ -21,8 +22,13 @@ def play_game():
 
         if choice == "1":
             print("\nYou enter the jungle...")
-            print("You discovered a golden crown!")
-            treasures.append("Golden Crown")
+
+            possible_treasures = ["Golden Crown", "Ruby", "Emerald", "Magic Sword"]
+            found_treasure = random.choice(possible_treasures)
+
+            print("You discovered a", found_treasure + "!")
+            treasures.append(found_treasure)
+
 
         elif choice == "2":
             print("\nYou enter a dark cave...")
