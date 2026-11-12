@@ -5,6 +5,13 @@ import random
 
 def play_game():
     treasures = []
+    treasure_values = {
+        "Golden Crown": 100,
+        "Ruby": 75,
+        "Emerald": 60,
+        "Magic Sword": 40,
+        "Diamond": 50
+    }
     playing = True
 
     print("Welcome to Treasure Island!")
@@ -42,10 +49,20 @@ def play_game():
             else:
                 for treasure in treasures:
                     print("-", treasure)
+            total_score = 0
+            for treasure in treasures:
+                total_score += treasure_values [treasure]
+            print("Total score", total_score)
 
         elif choice == "4":
             print("\nYou escaped Treasure Island!")
             print("Total treasures collected:", len(treasures))
+
+            total_score = 0
+            for treasure in treasures:
+                total_score += treasure_values [treasure]
+
+            print("Total score:", total_score)
             print("Thanks for playing!")
             playing = False
 
