@@ -24,8 +24,9 @@ def play_game():
         print("2. Search the cave")
         print("3. Check your treasure")
         print("4. Escape the island")
+        print("5. Open a mystery treasure chest")
 
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-5): ")
 
         if choice == "1":
             print("\nYou enter the jungle...")
@@ -66,8 +67,20 @@ def play_game():
             print("Thanks for playing!")
             playing = False
 
+        elif choice == "5":
+            print("\nYou found a mysterious treasure chest!")
+
+            chest_rewards = ["Golden Crown", "Ruby", "Emerald", None]
+            reward = random.choice(chest_rewards)
+
+            if reward is None:
+                print("Oh no! The chest is empty!")
+            else:
+                treasures.append(reward)
+                print("You opened the chest and found a", reward + "!")
+
         else:
-            print("Invalid choice! Please enter 1, 2, 3, or 4.")
+            print("Invalid choice! Please enter 1, 2, 3, 4, or 5.")
 
 
 play_game()
